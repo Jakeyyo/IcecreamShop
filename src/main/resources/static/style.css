@@ -1,0 +1,127 @@
+body {
+    background-image: url("images/skyBackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2{
+      color:crimson;
+      text-shadow: 5px 0px 5px white;
+      
+}
+
+nav {
+    width: 200px;
+}
+
+div:hover {
+    box-shadow: 0px 0px 5px blue;
+}
+
+#displayBalance {
+    color: black;
+}
+
+
+#displayList img {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover;
+}
+
+#displayList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#displayList > div {
+    width: 180px;
+}
+
+#showActiveFlavoursList img {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover;
+}
+
+#showActiveFlavoursList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#showActiveFlavoursList > div {
+    width: 180px;
+}
+
+#displayFlavoursOrder img {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: cover;
+}
+
+#displayFlavoursOrder {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#displayFlavoursOrder > div {
+    width: 180px;
+}
+
+#displayListIcecreams img {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: cover;
+}
+
+#displayListIcecreams {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#displayListIcecreams > div {
+    width: 180px;
+}
+
+#confirmOrderList img {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: cover;
+}
+
+#confirmOrderList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#confirmOrderList > div {
+    width: 180px;
+}
+
+
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}

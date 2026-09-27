@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Icecream Shop</title> 
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <nav>
+        <a href="#" id="flavoursLink">Flavours</a>
+        <a href="#" id="suppliersLink">Suppliers</a>
+        <a href="#" id="customersLink">Customers</a>
+        <a href="#" id="ordersLink">Orders</a>
+        <a href="#" id="dataLink">Data</a>
+        </nav>
+
+        <h2 id="displayBalance"></h2>
+
+        <input type="text" id="getFlavourByNameInput" placeholder="Search flavour name...">
+
+        <button id="getAllFlavoursButton">Search...</button>
+
+        <label id="nameCheckBoxLabel"><input type="checkbox" id="nameCheckBox">Sort by name</label>
+        <label id="descCheckBoxLabel"><input type="checkbox" id="descCheckBox">Reverse sort</label>
+        <label id="archiveCheckBoxLabel"><input type="checkbox" id="archiveCheckBox">Show archive</label>
+
+        <button id="addFlavourButton">New Flavour...</button>
+
+        <button id="addOrderButton">New Order...</button>
+        
+        <dialog id="addFlavourPopup">
+
+            <h2>Add new flavour to database</h2>
+
+            <label>
+                Name: 
+                <input type="text" id="addFlavourNameInput">
+            </label>
+
+            <br><br>
+
+            <label>
+                Stock Level:
+                <input type="text" id="addFlavourStockLevelInput">
+            </label>
+
+            <label>
+                Purchase price/l:
+                <input type="number" id="addFlavourPurchasePrice">
+            </label>
+
+            <label>
+                Selling price/scoop:
+                <input type="number" id="addFlavourSellingPrice">
+            </label>
+
+            <label>
+                Supplier:
+                <select id="addFlavourSelectSupplier">
+                    <option value="">Select supplier</option>
+                </select>
+            </label>
+
+            <label >
+                Image:
+                <input type="file" id="addFlavourSelectImage" accept="image/*">
+            </label>
+
+            <button id="saveFlavourButton">Save new flavour</button>
+            <button id="closeAddNewFlavourButton">Close</button>
+
+        </dialog>
+
+        <dialog id="editFlavourPopup">
+            <h2 id="editFlavourTitle"></h2>
+
+            <label>
+                Name:
+                <input type="text" id="editFlavourNameInput">
+            </label>
+
+            <label>
+                Stock Level:
+                <input type="text" id="editFlavourStockLevelInput">
+            </label>
+
+            <label>
+                Purchase Price/l:
+                <input type="number" id="editFlavourPurchasePrice">
+            </label>
+
+            <label>
+                Selling price/scoop:
+                <input type="number" id="editFlavourSellingPrice">
+            </label>
+
+            <label>
+                Supplier:
+                <select id="editFlavourSelectSupplier">
+                    <option value="">Select supplier</option>
+                </select>
+                
+            </label>
+
+            <label>
+                Image:
+                <img id = "editFlavourCurrentImage" width="100">
+                <input type="file" id="editFlavourSelectImage" accept="image/*">
+            </label>
+
+            <button id="editFlavourButton">Save changes</button>
+            <button id="deleteFlavourButton">Archive</button>
+            <button id="closeEditFlavourButton">Close</button>
+
+        </dialog>
+
+        <dialog id="deleteFlavourPopup">
+                <p id="confirmDeleteFlavourText"></p>
+
+                <button id="deleteFlavourButtonOK">OK</button>
+                <button id="deleteFlavourButtonCancel">Cancel</button>
+            </dialog>
+
+            <dialog id="addSupplierPopup">
+                <h2>Add new supplier to database</h2>
+
+                <label>
+                    Name:
+                    <input type="text" id="addSupplierNameInput">
+                </label>
+
+                <label>
+                    Phone Number:
+                    <input type="text" id="addSupplierPhoneNumberInput">
+                </label>
+
+                <label>
+                    Email:
+                    <input type="text" id="addSupplierEmailInput">
+                </label>
+
+                <button id="saveSupplierButton">Save new supplier</button>
+                <button id="closeAddNewSupplierButton">Close</button>
+
+            </dialog>
+        
+            <dialog id="editSupplierPopup">
+                <h2 id="editSupplierTitle"></h2>
+
+                <label>
+                    Name:
+                    <input type="text" id="editSupplierNameInput">
+                </label>
+
+                <label>
+                    Phone Number:
+                    <input type="text" id="editSupplierPhoneNumberInput">
+                </label>
+
+                <label>
+                    Email:
+                    <input type="text" id="editSupplierEmailInput">
+                </label>
+
+                <button id="editSupplierButton">Save changes</button>
+                <button id="archiveSupplierButton">Archive</button>
+                <button id="closeEditSupplierButton">Close</button>
+
+            </dialog>
+
+            <dialog id="archiveSupplierPopup">
+                <div id="confirmArchiveSupplierText"></div>
+
+                <button id="archiveSupplierButtonOK">OK</button>
+                <button id="archiveSupplierButtonCancel">Cancel</button>
+            </dialog>
+
+            <dialog id="addOrderPopup">
+                <h2>Add new order</h2>
+
+                <button id="addNewIcecreamButton">New icecream...</button>
+
+                <h2 id="totalPriceTitle">Total price:</h2>
+
+                <div id="displayListIcecreams"></div>
+
+                <button id="addOrderButtonOK">Next...</button>
+                <button id="addOrderButtonCancel">Close</button>
+
+            </dialog>
+
+            <dialog id="addIcecreamPopup">
+                <h2>Add new icecream to order</h2>
+                <div id="displayFlavoursOrder"></div>
+                <button id="addNewFlavourIcecreamButton">Add new flavour...</button>
+                <button id="addIcecreamButtonOK">Add icecream to order</button>
+                <button id="addNewFlavourIcecreamButtonClose">Close</button>
+            </dialog>
+
+            <dialog id="showActiveFlavoursPopup">
+                <h2>Choose flavour</h2>
+                <div id="showActiveFlavoursList"></div>
+                <button id="showActiveFlavoursListButtonClose">Close</button>
+            </dialog>
+
+            <dialog id="flavourStockLevelTooLowPopup">
+                <div>Stock level too low!</div>
+                <button id="flavourStockLevelTooLowButtonClose">Close</button>
+            </dialog>
+
+            <dialog id ="addCustomerPopup">
+                <h2>Customer information</h2>
+
+                <label>
+                    Name:
+                    <input type="text" id="customerNameInput">
+                </label>
+
+                <label>
+                    Phone Number:
+                    <input type="text" id="customerPhoneInput">
+                </label>
+
+                <label>
+                    Email:
+                    <input type="text" id="customerEmailInput">
+                </label>
+
+                <button id="addCustomerButtonOK">Next...</button>
+                <button id="addCustomerButtonCancel">Close</button>
+            </dialog>
+
+            <dialog id="confirmPopup">
+
+                <h2 id="confirmOrderTitle">Order summary</h2>
+
+                <h2 id="confirmOrderTotalPrice"></h2>
+                <div id="confirmOrderList"></div>
+
+                <button id="confirmOrderButton">Confirm order</button>
+                <button id="cancelOrderButton">Close</button>
+            </dialog>
+
+            <dialog id="editCustomerPopup">
+
+                <h2 id="editCustomerTitle"></h2>
+
+                <label>
+                    Name:
+                    <input type="text" id="editCustomerNameInput">
+                </label>
+
+                <label>
+                    Phone number:
+                    <input type="text" id="editCustomerPhoneNumberInput">
+                </label>
+
+                <label>
+                    Email:
+                    <input type="text" id="editCustomerEmailInput">
+                </label>
+
+                <button id="editCustomerButton">Save changes</button>
+                <button id="archiveCustomerButton">Archive</button>
+                <button id="closeEditCustomerButton">Close</button>
+            </dialog>
+
+            <dialog id="orderDetailsPopup">
+                <h2 id="orderDetailsTitle">Order details</h2>
+
+                <div id="orderDetailsList"></div>
+
+                <button id="orderDetailsButtonClose">Close</button>
+            </dialog>
+
+            <dialog id="dataMenuPopup">
+                <button id="mostFrequentCustomersButton">Most frequent customers...</button>
+                <button id="mostpPopularFlavoursButton">Most popular flavours...</button>
+                <br>
+                <button id="closeDataMenuPopupButton">Close</button>
+
+            </dialog>
+
+        <h2 id="displayTitle"></h2>
+        <p id="displayList"></p>
+
+        <script src="script.js"></script>
+    </body>
+</html>
